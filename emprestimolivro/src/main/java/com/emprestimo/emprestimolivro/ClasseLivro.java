@@ -2,10 +2,12 @@ package com.emprestimo.emprestimolivro;
 
 import jakarta.persistence.*;
 
+//Annotation usando JPA para criar a tabela do banco de dados
 @Entity
 @Table(name = "tabela_livro")
 public class ClasseLivro {
 
+    //Annotation para gerar ID na tabela do banco de dados
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -17,9 +19,23 @@ public class ClasseLivro {
     private String Status;
     private String Edicao;
 
+    public ClasseLivro(int IDLivro, String Nome, String Tiulo, String Autor, String Editora, String Status, String Edicao) {
+
+        this.IDLivro = IDLivro;
+        this.Nome = Nome;
+        this.Titulo = Titulo;
+        this.Autor = Autor;
+        this.Editora = Editora;
+        this.Status = Status;
+        this.Edicao = Edicao;
+
+    }
+
+    //Construtor da classe
     public ClasseLivro() {
     }
 
+    ////Getters e setters
     public int getIDLivro() {
         return IDLivro;
     }
